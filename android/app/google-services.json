@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "422746159001",
+    "project_id": "halogram-9c314",
+    "storage_bucket": "halogram-9c314.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422746159001:android:ce83df5fda70f7a346c508",
+        "android_client_info": {
+          "package_name": "com.example.halogram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422746159001-5vtrj607t6ttqo2ajqmacec3ctaen0oe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.halogram",
+            "certificate_hash": "495ae4eff998bbf6e3afa55dbb0be1ec47de3b1b"
+          }
+        },
+        {
+          "client_id": "422746159001-1ieo9tni86pv6o7upmi41qt674nh5khv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhqsg8Z_jn_QfexcKK89f6nZrP2pDMzms"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422746159001-1ieo9tni86pv6o7upmi41qt674nh5khv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
