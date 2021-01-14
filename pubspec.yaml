@@ -34,10 +34,12 @@ dependencies:
   image: ^2.0.7
   animator: ^2.0.1
   path_provider: ^0.5.0+1
-  firebase_messaging: ^4.0.0+1
+  firebase_messaging: ^6.0.13
   timeago: 2.0.17
   cached_network_image:
   flutter_svg:
+  flutter_local_notifications: ^3.0.2
+  shared_preferences: ^0.5.7+1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -69,6 +71,7 @@ flutter:
     - assets/images/search.svg
     - assets/images/activity_feed.svg
     - assets/images/no_content.svg
+    - assets/images/picture.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

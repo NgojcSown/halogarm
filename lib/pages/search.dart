@@ -59,6 +59,7 @@ class _SearchState extends State<Search> with AutomaticKeepAliveClientMixin{
               ),
               onPressed: () {
                 searchController.clear();
+
               },
             )),
       ),

@@ -204,7 +204,7 @@ class _ProfileState extends State<Profile> {
     }
     else if (!isFollowing)
     {
-      return buildButton(text: "Theo dõi",onPressed: handleFollow);
+      return buildButton(text: "Theo dõi",onPressed: handleFollow) ;
     }
   }
   getUserPosts()async{
@@ -237,7 +237,7 @@ class _ProfileState extends State<Profile> {
                   style: TextStyle(
                     fontSize: 22.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.pink[400],
+                    color: Colors.lightBlueAccent,
                   ),
                 ),
               ),

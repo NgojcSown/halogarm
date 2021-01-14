@@ -1,13 +1,12 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:halogram/models/user.dart';
 import 'package:halogram/pages/create_account.dart';
 import 'package:halogram/pages/activity_feed.dart';
+import 'package:halogram/pages/following.dart';
 import 'package:halogram/pages/profile.dart';
 import 'package:halogram/pages/search.dart';
 import 'package:halogram/pages/upload.dart';
@@ -52,6 +51,7 @@ class _HomeState extends State<Home> {
 
   login() {
     googleSignIn.signIn();
+
   } //sign in and sign out functions
 
   logout() {
@@ -107,14 +107,16 @@ class _HomeState extends State<Home> {
     super.dispose();
   }
 
-  Scaffold buildAuthScreen() // will be the timeline screen soon isa
+  Scaffold buildAuthScreen() // Màn hình Suggestion được hiện lên đầu tiên
   {
     return Scaffold(
       key : _scaffoldKey,
       body: PageView(
         children: <Widget>[
           Suggestions(currentUser : currentUser),
+          Following(currentUser: currentUser),
           ActivityFeed(),
+
           Upload(currentUser : currentUser),
           Search(),
           Profile(profileId: currentUser?.id,),
@@ -128,8 +130,10 @@ class _HomeState extends State<Home> {
         currentIndex: pageIndex,
         onTap: onTap,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.whatshot)),
+          BottomNavigationBarItem(icon: Icon(Icons.insert_emoticon_rounded)),
+          BottomNavigationBarItem(icon: Icon(Icons.follow_the_signs_outlined)),
           BottomNavigationBarItem(icon: Icon(Icons.notifications_active)),
+
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.photo_camera,
@@ -172,7 +176,7 @@ class _HomeState extends State<Home> {
             GestureDetector(
               onTap: login,
               child: Image.asset('assets/images/google_signin_button.png'),
-            ), // i was able to use flat button also ?google sign in
+            ), // đăng nhập bằng google
           ],
         ),
       ),
@@ -181,7 +185,7 @@ class _HomeState extends State<Home> {
 
   @override
   void initState() {
-    // recognizeing loging in and out
+    // ghi lại việc login và logout
     googleSignIn.onCurrentUserChanged.listen((account) {
       handleSignIn(account);
     }, onError: (err) {
@@ -193,7 +197,7 @@ class _HomeState extends State<Home> {
       // print(err);
     });
     pageController = PageController(); //can change initital page
-    //followersRef.document(currentUser.id).collection('userFollowers').document(currentUser.id).setData({});
+
 
     super.initState();
   }

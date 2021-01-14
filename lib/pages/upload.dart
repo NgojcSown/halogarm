@@ -72,8 +72,10 @@ class _UploadState extends State<Upload> with AutomaticKeepAliveClientMixin{
       }
     );
   }
-  Container buildSplashScreen() {
-    return Container(
+  Scaffold buildSplashScreen() {
+    return Scaffold(
+        body: Container(
+      child: SingleChildScrollView(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -95,6 +97,8 @@ class _UploadState extends State<Upload> with AutomaticKeepAliveClientMixin{
           )
         ],
       ),
+              ),
+        ),
     );
   }
   clearImage(){
@@ -146,7 +150,8 @@ class _UploadState extends State<Upload> with AutomaticKeepAliveClientMixin{
       isUploading =false;
       file=null;
     });
-    Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+    SnackBar snackBar =SnackBar(content: Text('Tải lên thành công!'),);
+    Scaffold.of(context).showSnackBar(snackBar);
   }
   Scaffold buildUploadForm(){
     return Scaffold(

@@ -60,7 +60,7 @@ class _CreateAccountState extends State<CreateAccount> {
                   //may need to add a color
                 ),
                 child: Center(
-                  child: Text('Submit',
+                  child: Text('Hoàn tất',
                   style: TextStyle(
                     fontSize: 15.0,
                     fontWeight: FontWeight.bold,

@@ -90,9 +90,7 @@ class ActivityFeedItem extends StatelessWidget {
     else{
       mediaPreview=Text("");
     }
-    if(type=='postID')
-      activityItemText="Đã tải lên bài viết mới";
-    else if(type=='like')
+     if(type=='like')
       activityItemText = "Đã thích bài viết của bạn";
     else if(type=='comment')
       activityItemText = "Đã bình luận về bài viết: '$commentData'";

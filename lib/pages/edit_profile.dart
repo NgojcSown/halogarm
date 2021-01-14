@@ -90,6 +90,7 @@ class _EditProfileState extends State<EditProfile> {
   logout() {
     googleSignIn.signOut();
     Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
+
   }
   @override
   void initState() {

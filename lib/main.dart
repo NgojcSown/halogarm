@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
         primaryColor: Color(0xff000a12),
-        accentColor: Color(0xff00675b),
+        accentColor: Colors.blueAccent,
       ),
       title: 'Halogram',
       debugShowCheckedModeBanner: false,
